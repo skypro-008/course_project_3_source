@@ -1,8 +1,8 @@
-from project.dao.genre import GenresDAO
+from project.dao.genre import GenreDAO
 
 
 __all__ = [
-    'GenresDAO',
+    'GenreDAO',
 ]
 
 

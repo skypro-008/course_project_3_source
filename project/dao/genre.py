@@ -1,16 +1,12 @@
-from project.dao.models.genres import Genres, GenreSchema
+from project.dao.models.genres import Genre, GenreSchema
 
 
-class GenresDAO:
+class GenreDAO:
     def __init__(self, session):
         self.session = session
 
-    def get_all(self):
-        genres = Genres.query.all()
-        result = GenreSchema(many=True).dump(genres)
-        return result, 200
+    def get_one(self, bid):
+        return self.session.query(Genre).get(bid)
 
-    def get_one(self, gid):
-        genre = Genres.query.get(gid)
-        result = GenreSchema().dump(genre)
-        return result
+    def get_all(self):
+        return self.session.query(Genre).all()

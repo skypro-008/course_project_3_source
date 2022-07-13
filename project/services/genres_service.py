@@ -1,14 +1,13 @@
-
-
+from project.dao.genre import GenreDAO
 
 
 class GenreService:
+    def __init__(self, dao: GenreDAO):
+        self.dao = dao
 
-    def __init__(self, genres_dao):
-        self.genres_dao = genres_dao
+    def get_one(self, bid):
+        return self.dao.get_one(bid)
 
     def get_all(self):
-        return self.genres_dao.get_all()
+        return self.dao.get_all()
 
-    def get_one(self, gid):
-        return self.genres_dao.get_one(gid)
