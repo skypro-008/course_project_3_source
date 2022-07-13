@@ -10,3 +10,9 @@ class GenreDAO:
 
     def get_all(self):
         return self.session.query(Genre).all()
+
+    def create(self, data):
+        new_data = Genre(**data)
+        self.session.add(new_data)
+        self.session.commit()
+        return new_data

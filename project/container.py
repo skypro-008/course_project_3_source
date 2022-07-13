@@ -7,7 +7,7 @@ from project.setup.db import db
 
 # DAO
 genre_dao = GenreDAO(db.session)
-user_dao = UserDAO
+user_dao = UserDAO(db.session)
 
 # Services
 genre_service = GenreService(dao=genre_dao)

@@ -1,4 +1,4 @@
-from project.dao.genre import GenreDAO
+from project.dao.genre import GenreDAO, GenreSchema
 
 
 class GenreService:
@@ -11,3 +11,6 @@ class GenreService:
     def get_all(self):
         return self.dao.get_all()
 
+    def create(self, item_data):
+        item_in_schema = GenreSchema().load(item_data)
+        self.dao.create(item_in_schema)

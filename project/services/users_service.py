@@ -25,7 +25,7 @@ class UserService:
 
     def create(self, item_data):
         item_in_schema = UserSchema().load(item_data)
-        item_db = self.dao.create(item_in_schema)
+        item_db = self.dao.create(data=item_in_schema)
 
     def update(self, new_data):
         self.dao.update(new_data)
